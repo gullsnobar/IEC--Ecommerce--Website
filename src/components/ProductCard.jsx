@@ -6,17 +6,17 @@ const ProductCard = ({ product, onAddToCart, cartItems, onProductClick }) => {
   const quantity = cartItem ? cartItem.quantity : 0;
 
   return (
-    <div
-      onClick={() => onProductClick(product.id)}
-      style={{
-        backgroundColor: 'white',
-        borderRadius: '12px',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden',
-        transition: 'transform 0.2s',
-        cursor: 'pointer',
-        width: '280px',
-        margin: '0 auto'
+  <div
+  onClick={() => onProductClick(product.id)}
+  style={{
+  backgroundColor: 'white',
+  borderRadius: '12px',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+  overflow: 'hidden',
+  transition: 'transform 0.2s',
+  cursor: 'pointer',
+  width: '280px',
+  margin: '0 auto'
       }}
     >
       {/* Image */}
@@ -67,51 +67,48 @@ const ProductCard = ({ product, onAddToCart, cartItems, onProductClick }) => {
           )}
         </div>
 
-        {/* Cart Buttons */}
-        {quantity === 0 ? (
-          <button
-            onClick={(e) => { e.stopPropagation(); onAddToCart(product, 1); }}
-            style={{
-              width: '100%', padding: '0.75rem 1rem',
-              backgroundColor: '#059669', color: 'white',
-              border: 'none', borderRadius: '8px',
-              fontSize: '0.875rem', fontWeight: '600',
-              cursor: 'pointer', display: 'flex',
-              alignItems: 'center', justifyContent: 'center', gap: '0.5rem'
-            }}
-          >
-            <ShoppingCart size={16} /> Add to Cart
-          </button>
-        ) : (
-          <div style={{
-            display: 'flex', alignItems: 'center',
-            justifyContent: 'space-between', backgroundColor: '#F0FDF4',
-            padding: '0.5rem', borderRadius: '8px', border: '1px solid #059669'
-          }}>
-            <button
-              onClick={(e) => { e.stopPropagation(); onAddToCart(product, -1); }}
-              style={{
-                width: 32, height: 32, borderRadius: 4,
-                border: '1px solid #059669', backgroundColor: 'white',
-                color: '#059669', cursor: 'pointer'
-              }}
-            ><Minus size={16} /></button>
-            <span style={{ fontSize: '1rem', fontWeight: '600', color: '#059669' }}>
-              {quantity}
-            </span>
-            <button
-              onClick={(e) => { e.stopPropagation(); onAddToCart(product, 1); }}
-              style={{
-                width: 32, height: 32, borderRadius: 4,
-                border: '1px solid #059669', backgroundColor: '#059669',
-                color: 'white', cursor: 'pointer'
-              }}
-            ><Plus size={16} /></button>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+{/* Cart Buttons */}
+{quantity === 0 ? (
+<button
+onClick={(e) => { e.stopPropagation(); onAddToCart(product, 1); }}
+style={{
+width: '100%', padding: '0.75rem 1rem',
+backgroundColor: '#059669', color: 'white',
+border: 'none', borderRadius: '8px',
+fontSize: '0.875rem', fontWeight: '600',
+cursor: 'pointer', display: 'flex',
+alignItems: 'center', justifyContent: 'center', gap: '0.5rem'
+}}
+>
+<ShoppingCart size={16} /> Add to Cart
+</button>
+) : (<div style={{
+display: 'flex', alignItems: 'center',
+justifyContent: 'space-between', backgroundColor: '#F0FDF4',
+padding: '0.5rem', borderRadius: '8px', border: '1px solid #059669'
+}}>
+<button
+onClick={(e) => { e.stopPropagation(); onAddToCart(product, -1); }}
+style={{
+width: 32, height: 32, borderRadius: 4,
+border: '1px solid #059669', backgroundColor: 'white',
+color: '#059669', cursor: 'pointer'
+}}
+><Minus size={16} /></button>
+<span style={{ fontSize: '1rem', fontWeight: '600', color: '#059669' }}>
+{quantity}
+</span>
+<button
+onClick={(e) => { e.stopPropagation(); onAddToCart(product, 1); }}
+style={{width: 32, height: 32, borderRadius: 4,
+border: '1px solid #059669', backgroundColor: '#059669',
+color: 'white', cursor: 'pointer'
+ }}
+><Plus size={16} /></button>
+</div>
+)}
+</div>
+</div>
+);
 };
-
 export default ProductCard;
