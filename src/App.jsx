@@ -34,30 +34,26 @@ const App = () => {
 
   return (
     <>
-      {!shouldHideNavbar && <Navbar />}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              onProductClick={handleProductClick}
-              onAddToCart={handleAddToCart}
-            />
-          }
-        />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/product/:id"
-          element={
-            <ProductDetails
-              onBack={handleBackClick}
-              onAddToCart={handleAddToCart}
-            />
-          }
-        />
-      </Routes>
-    </>
+  {!shouldHideNavbar && <Navbar />}
+  <Routes>
+  <Route
+  path="/"
+  element={
+  <Home onProductClick={handleProductClick} onAddToCart={handleAddToCart}/>
+  }
+  />
+  <Route path="/signup" element={<Signup />} />
+  <Route path="/login" element={<Login />} />
+  <Route
+  path="/product/:id"
+  element={
+  <ProductDetails
+  onBack={handleBackClick}
+  onAddToCart={handleAddToCart}
+  /> }
+  />
+  </Routes>
+  </>
   );
 };
 
