@@ -19,53 +19,53 @@ const ProductCard = ({ product, onAddToCart, cartItems, onProductClick }) => {
   margin: '0 auto'
       }}
     >
-      {/* Image */}
-      <div style={{
-        width: '100%', height: '200px', backgroundColor: '#F9FAFB',
-        display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'
-      }}>
-        <img
-          src={product.image}
-          alt={product.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          onError={(e) => e.target.style.display = 'none'}
-        />
-        {product.discount && (
-          <div style={{
-            position: 'absolute', top: '12px', left: '12px',
-            backgroundColor: '#FEF3C7', color: '#D97706',
-            padding: '4px 8px', borderRadius: '6px',
-            fontSize: '0.75rem', fontWeight: '600'
-          }}>
-            {product.discount}% OFF
-          </div>
-        )}
-      </div>
+  {/* Image */}
+  <div style={{
+  width: '100%', height: '200px', backgroundColor: '#F9FAFB',
+  display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'
+  }}>
+  <img
+  src={product.image}
+  alt={product.name}
+  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+  onError={(e) => e.target.style.display = 'none'}
+  />
+  {product.discount && (
+  <div style={{
+  position: 'absolute', top: '12px', left: '12px',
+  backgroundColor: '#FEF3C7', color: '#D97706',
+  padding: '4px 8px', borderRadius: '6px',
+  fontSize: '0.75rem', fontWeight: '600'
+  }}>
+  {product.discount}% OFF
+  </div>
+  )}
+  </div>
 
-      {/* Info */}
-      <div style={{ padding: '1.5rem' }}>
-        <h3 style={{
-          fontSize: '1.125rem', fontWeight: '600', color: '#1F2937',
-          margin: '0 0 0.5rem', lineHeight: '1.4'
-        }}>{product.name}</h3>
+  {/* Info */}
+  <div style={{ padding: '1.5rem' }}>
+  <h3 style={{
+  fontSize: '1.125rem', fontWeight: '600', color: '#1F2937',
+  margin: '0 0 0.5rem', lineHeight: '1.4'
+  }}>{product.name}</h3>
 
-        <p style={{ fontSize: '0.875rem', color: '#6B7280', marginBottom: '1rem' }}>
-          {product.weight}
-        </p>
+  <p style={{ fontSize: '0.875rem', color: '#6B7280', marginBottom: '1rem' }}>
+  {product.weight}
+  </p>
 
-        {/* Price */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-          <span style={{
-            fontSize: '1.25rem', fontWeight: '700', color: '#059669'
-          }}>${parseFloat(product.price).toFixed(2)}</span>
-          {product.originalPrice && (
-            <span style={{
-              fontSize: '0.875rem', color: '#9CA3AF', textDecoration: 'line-through'
-            }}>
-              ${parseFloat(product.originalPrice).toFixed(2)}
-            </span>
-          )}
-        </div>
+  {/* Price */}
+  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+  <span style={{
+  fontSize: '1.25rem', fontWeight: '700', color: '#059669'
+  }}>${parseFloat(product.price).toFixed(2)}</span>
+  {product.originalPrice && (
+  <span style={{
+  fontSize: '0.875rem', color: '#9CA3AF', textDecoration: 'line-through'
+  }}>
+  ${parseFloat(product.originalPrice).toFixed(2)}
+  </span>
+  )}
+  </div>
 
 {/* Cart Buttons */}
 {quantity === 0 ? (
